@@ -22,7 +22,6 @@ This is a role-based dashboard SPA built with **Next.js (App Router)** for the C
 ### 🛡️ Security & Best Practices
 - **Route Handlers & Middleware**: Used to protect API endpoints and restrict access based on user role
 - **HttpOnly Cookies**: Authentication tokens are stored in HttpOnly cookies to mitigate XSS and CSRF attacks
-- **No Real Backend**: All sensitive logic is simulated, but the structure mirrors real-world secure practices
 
 ---
 
