@@ -33,7 +33,13 @@ import {
 } from "@/lib/store/slices/usersSlice";
 import { toast } from "react-toastify";
 import { ROLES } from "@/lib/constants";
-import { systemStats } from "@/lib/mock-data";
+
+const systemStats = {
+  totalPayments: 50500.0,
+  activeUsers: 156,
+  totalTransactions: 1247,
+  monthlyGrowth: 12.5,
+};
 
 export default function SuperAdminDashboard() {
   const dispatch = useAppDispatch();
