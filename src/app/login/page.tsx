@@ -136,7 +136,7 @@ export default function LoginPage() {
           </form>
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm font-medium mb-3">
-              Demo Accounts (Password: "password"):
+              Demo Accounts (Password is password):
             </p>
             <div className="space-y-2">
               <Button
