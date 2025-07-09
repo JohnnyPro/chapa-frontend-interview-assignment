@@ -1,4 +1,5 @@
 import { hashPassword } from "@/lib/auth/auth";
+import { ROLES, UserRole } from "./constants";
 export interface Transaction {
   id: string
   senderId: string
@@ -16,7 +17,7 @@ export interface MockUser {
   name: string
   password: string
   email: string
-  role: "user" | "admin" | "super-admin"
+  role: UserRole
   isActive: boolean
   walletBalance: number
   totalPayments: number
@@ -48,7 +49,7 @@ export const mockUsers: MockUser[] = [
     name: "Mike SuperAdmin",
     password: await hashPassword("password"),
     email: "super@chapa.co",
-    role: "super-admin",
+    role: ROLES.SUPERADMIN,
     isActive: true,
     walletBalance: 5000.0,
     totalPayments: 25000.0,

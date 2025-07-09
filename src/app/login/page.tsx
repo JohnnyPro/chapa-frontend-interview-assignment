@@ -28,8 +28,8 @@ export default function LoginPage() {
       const data = await res.json();
       if (data.success) {
         const role = data.user.role;
-        if (role === "super-admin") {
-          router.push("/super-admin/dashboard");
+        if (role === "superadmin") {
+          router.push("/superadmin/dashboard");
         } else if (role === "admin") {
           router.push("/admin/dashboard");
         } else {
