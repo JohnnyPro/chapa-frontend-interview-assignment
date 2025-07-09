@@ -15,6 +15,7 @@ This is a role-based dashboard SPA built with **Next.js (App Router)** for the C
 - **User**: View wallet balance, recent transactions, and initiate new transactions
 - **Admin**: Manage users (activate/deactivate), view user payment summaries
 - **Super Admin**: All admin features plus add/remove admins or regular user and view system-wide stats
+- **Transactions**: Users can submit transactions with real UI feedback and state updates (all simulated with mock data)
 - **Mocked API Calls**: All backend logic is simulated with mock data and async delays
 - **Redux**: Used for robust global state management
 - **Clean Component Structure**: Organized for clarity and scalability
