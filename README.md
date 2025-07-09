@@ -8,6 +8,8 @@
 
 This is a role-based dashboard SPA built with **Next.js (App Router)** for the Chapa Frontend Developer (React) test. The app simulates a Payment Service Provider platform, with different dashboards and features for **User**, **Admin**, and **Super Admin** roles. All data and API calls are mocked for demonstration purposes.
 
+👉 **You can try the app instantly here: [Live Demo](https://chapa-frontend-interview-assignment.vercel.app/)**
+
 ### ✨ Key Features
 - **Role-based Dashboards**: UI and features change based on login role (User, Admin, Super Admin)
 - **User**: View wallet balance, recent transactions, and initiate new transactions
@@ -25,6 +27,10 @@ This is a role-based dashboard SPA built with **Next.js (App Router)** for the C
 ---
 
 ## Getting Started
+
+You can also explore the app directly in your browser via the [Live Demo](https://chapa-frontend-interview-assignment.vercel.app/).
+
+To run locally:
 
 ```bash
 npm install
