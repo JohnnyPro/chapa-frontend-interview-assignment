@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserRole } from "../../constants";
 
 import { Profile } from "@/lib/types/profile";
 

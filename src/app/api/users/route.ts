@@ -10,6 +10,7 @@ export async function GET() {
       users: mockUsers,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,

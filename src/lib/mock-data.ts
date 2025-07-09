@@ -1,5 +1,5 @@
 import { hashPassword } from "@/lib/auth/auth";
-import { ROLES, UserRole } from "./constants";
+import { ROLES } from "./constants";
 import { MockUser } from "./types/user";
 import { Transaction } from "./types/transaction";
 

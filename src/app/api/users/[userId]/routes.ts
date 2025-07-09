@@ -15,7 +15,7 @@ export async function DELETE(request: NextRequest) {
         { status: 400 }
       );
     }
-    
+
     const userIndex = mockUsers.findIndex((u) => u.id === userId);
 
     if (userIndex === -1) {
@@ -35,6 +35,7 @@ export async function DELETE(request: NextRequest) {
       message: "Removed User successfully",
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,

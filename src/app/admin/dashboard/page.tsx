@@ -9,7 +9,6 @@ import { Users, DollarSign, Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { fetchUsers, toggleUserStatus } from "@/lib/store/slices/usersSlice";
-import { ROLES } from "@/lib/constants";
 
 export default function AdminDashboard() {
   const dispatch = useAppDispatch();
@@ -26,6 +25,7 @@ export default function AdminDashboard() {
       await dispatch(toggleUserStatus(userId)).unwrap();
       toast.success("User status updated successfully");
     } catch (error) {
+      console.error(error);
       toast.error("Failed to update user status");
     }
   };

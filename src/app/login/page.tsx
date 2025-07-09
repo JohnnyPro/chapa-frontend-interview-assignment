@@ -43,10 +43,14 @@ export default function LoginPage() {
         setError(data.error || "Login failed");
       }
     } catch (err) {
+      console.error(err);
       setError("An unexpected error occurred. Please try again.");
     }
   };
-
+  const quickLogin = (email: string) => {
+    setEmail(email)
+    setPassword("password")
+  }
   return (
     <div className="flex h-screen w-full">
       <div className="hidden w-1/2 flex-col justify-between bg-primary p-12 md:flex">
@@ -79,6 +83,7 @@ export default function LoginPage() {
       </div>
 
       <div className="flex w-full flex-col items-center justify-center bg-background p-8 md:w-1/2">
+        <div className="mt-15"></div>
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <h1 className="text-3xl font-bold">Welcome Back!</h1>
@@ -129,6 +134,54 @@ export default function LoginPage() {
               Login
             </Button>
           </form>
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm font-medium mb-3">
+              Demo Accounts (Password: "password"):
+            </p>
+            <div className="space-y-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full justify-start text-left bg-transparent"
+                onClick={() => quickLogin("user@chapa.co")}
+              >
+                <div>
+                  <p className="font-medium">John User</p>
+                  <p className="text-xs text-gray-500">
+                    user@chapa.co - Regular User
+                  </p>
+                </div>
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full justify-start text-left bg-transparent"
+                onClick={() => quickLogin("admin@chapa.co")}
+              >
+                <div>
+                  <p className="font-medium">Jane Admin</p>
+                  <p className="text-xs text-gray-500">
+                    admin@chapa.co - Admin
+                  </p>
+                </div>
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full justify-start text-left bg-transparent"
+                onClick={() => quickLogin("super@chapa.co")}
+              >
+                <div>
+                  <p className="font-medium">Mike SuperAdmin</p>
+                  <p className="text-xs text-gray-500">
+                    super@chapa.co - Super Admin
+                  </p>
+                </div>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

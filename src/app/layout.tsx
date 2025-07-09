@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { Provider } from "react-redux";
-import { store } from "@/lib/store/store";
 import AuthWrapper from "@/components/auth-wrapper";
 import { ReduxProvider } from "@/components/providers/redux-provider";
 

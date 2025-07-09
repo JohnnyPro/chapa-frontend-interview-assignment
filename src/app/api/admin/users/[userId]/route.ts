@@ -28,6 +28,8 @@ export async function DELETE(
       message: "User removed successfully",
     });
   } catch (error) {
+    console.error(error);
+
     return NextResponse.json(
       {
         success: false,
@@ -66,6 +68,8 @@ export async function PATCH(
       user: mockUsers[userIndex],
     });
   } catch (error) {
+    console.error(error);
+
     return NextResponse.json(
       {
         success: false,

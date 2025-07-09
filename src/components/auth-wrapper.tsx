@@ -19,6 +19,7 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
     if (!profile && !loading && !error) {
       dispatch(getProfile());
     }
+    // eslint-disable-next-line
   }, []);
 
   if (loading && !profile) {

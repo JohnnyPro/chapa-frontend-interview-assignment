@@ -69,6 +69,7 @@ export default function SuperAdminDashboard() {
       setNewUserData({ name: "", email: "", password: "", role: "" });
       toast.success("user added successfully");
     } catch (error) {
+      console.error(error);
       toast.error("Failed to add User");
     } finally {
       setIsAddingUser(false);
@@ -80,6 +81,7 @@ export default function SuperAdminDashboard() {
       await dispatch(removeUser(userId)).unwrap();
       toast.success("User removed successfully");
     } catch (error) {
+      console.error(error);
       toast.error("Failed to remove user");
     }
   };
@@ -89,6 +91,7 @@ export default function SuperAdminDashboard() {
       await dispatch(toggleUserStatus(userId)).unwrap();
       toast.success("User status updated successfully");
     } catch (error) {
+      console.error(error);
       toast.error("Failed to update user status");
     }
   };

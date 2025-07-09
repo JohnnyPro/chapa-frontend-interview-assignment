@@ -4,7 +4,6 @@ import { hashPassword } from "@/lib/auth/auth";
 import { MockUser } from "@/lib/types/user";
 import { ROLES } from "@/lib/constants";
 
-
 export async function GET() {
   try {
     await new Promise((resolve) => setTimeout(resolve, 600));
@@ -14,6 +13,8 @@ export async function GET() {
       users: mockUsers,
     });
   } catch (error) {
+    console.error(error);
+
     return NextResponse.json(
       {
         success: false,
@@ -59,6 +60,8 @@ export async function POST(request: NextRequest) {
       user: newAdmin,
     });
   } catch (error) {
+    console.error(error);
+
     return NextResponse.json(
       {
         success: false,

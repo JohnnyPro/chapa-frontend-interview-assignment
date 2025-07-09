@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
       { status: 401 }
     );
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,

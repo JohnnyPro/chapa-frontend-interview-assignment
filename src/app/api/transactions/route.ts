@@ -24,6 +24,7 @@ export async function GET(request: NextRequest) {
       transactions: userTransactions,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,
@@ -54,6 +55,7 @@ export async function POST(request: NextRequest) {
       transaction: newTransaction,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,

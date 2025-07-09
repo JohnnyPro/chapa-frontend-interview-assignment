@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const userId = request.cookies.get("user_id")?.value;
 
     const foundUser = userId ? mockUsers.find((u) => u.id === userId) : null;
-   
+
     if (!foundUser) {
       return NextResponse.json(
         {
@@ -19,13 +19,14 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // eslint-disable-next-line
     const { password, ...profile } = foundUser || {};
     return NextResponse.json({
       success: true,
       profile: profile as Profile,
     });
-
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         success: false,
