@@ -1,27 +1,7 @@
 import { hashPassword } from "@/lib/auth/auth";
 import { ROLES, UserRole } from "./constants";
-export interface Transaction {
-  id: string
-  senderId: string
-  senderName: string
-  receiverId: string
-  receiverName: string
-  amount: number
-  description: string
-  date: string
-  status: "completed" | "pending" | "failed"
-}
-
-export interface MockUser {
-  id: string
-  name: string
-  password: string
-  email: string
-  role: UserRole
-  isActive: boolean
-  walletBalance: number
-  totalPayments: number
-}
+import { MockUser } from "./types/user";
+import { Transaction } from "./types/transaction";
 
 export const mockUsers: MockUser[] = [
   {

@@ -6,11 +6,3 @@ export interface UserSession {
   name: string;
   role: UserRole;
 }
-
-export interface JWTPayload {
-  sub: string;
-  email: string;
-  role: UserRole;
-  exp: number;
-  iat: number;
-}

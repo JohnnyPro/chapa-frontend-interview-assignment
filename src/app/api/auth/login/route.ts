@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
         role: foundUser.role as UserRole,
       };
 
+      // This would've been how I would set the token as http-only
       cookieStore.set(
         "auth_token",
         "JWT TOKEN RESPONSE FROM BACKEND WOULD BE HERE",

@@ -7,12 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Eye, EyeOff, HandCoins, User, Lock } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/lib/store/hooks";
+import { getProfile } from "@/lib/store/slices/profileSlice";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
 
   const router = useRouter();
 
@@ -28,6 +31,7 @@ export default function LoginPage() {
       const data = await res.json();
       if (data.success) {
         const role = data.user.role;
+        dispatch(getProfile());
         if (role === "superadmin") {
           router.push("/superadmin/dashboard");
         } else if (role === "admin") {
@@ -57,6 +61,7 @@ export default function LoginPage() {
             <Image
               src="/login_asset.png"
               alt="Financial illustration"
+              sizes="(max-width: 768px) 50vw, 25vw"
               fill
               className="object-contain"
             />
@@ -64,8 +69,8 @@ export default function LoginPage() {
         </div>
         <div className="text-primary-foreground w-10/12 mx-auto">
           <h2 className="text-xl font-bold text-center">
-            Welcome to Fictional Payment Service – the modern payment platform built for
-            Africa. Empower your business with seamless, secure, and
+            Welcome to Fictional Payment Service – the modern payment platform
+            built for Africa. Empower your business with seamless, secure, and
             developer-friendly payment solutions made for the local market.
           </h2>
         </div>
@@ -88,6 +93,7 @@ export default function LoginPage() {
                 type="email"
                 placeholder="admin@email.com"
                 className="pl-10"
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -99,6 +105,7 @@ export default function LoginPage() {
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••••"
                 className="pl-10 pr-10"
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
