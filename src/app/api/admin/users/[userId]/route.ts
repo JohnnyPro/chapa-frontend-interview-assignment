@@ -3,10 +3,10 @@ import { mockUsers } from "@/lib/mock-data";
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
-    const { userId } = params;
+    const { userId } = await params;
 
     await new Promise((resolve) => setTimeout(resolve, 500));
     const userIndex = mockUsers.findIndex((u) => u.id === userId);
@@ -42,10 +42,10 @@ export async function DELETE(
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
-    const { userId } = params;
+    const { userId } = await params;
 
     await new Promise((resolve) => setTimeout(resolve, 400));
 

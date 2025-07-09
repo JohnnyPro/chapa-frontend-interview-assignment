@@ -3,10 +3,10 @@ import { mockUsers } from "@/lib/mock-data";
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { userId: string } }
+  context: { params: Promise<{ userId: string }> }
 ) {
   try {
-    const { userId } = context.params;
+    const { userId } = await context.params;
     const { newBalance } = await request.json();
 
     await new Promise((resolve) => setTimeout(resolve, 200));

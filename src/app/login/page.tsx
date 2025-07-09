@@ -160,7 +160,7 @@ export default function LoginPage() {
                 onClick={() => quickLogin("admin@chapa.co")}
               >
                 <div>
-                  <p className="font-medium">Jane Admin</p>
+                  <p className="font-medium">Solomon Admin</p>
                   <p className="text-xs text-gray-500">
                     admin@chapa.co - Admin
                   </p>
@@ -174,7 +174,7 @@ export default function LoginPage() {
                 onClick={() => quickLogin("super@chapa.co")}
               >
                 <div>
-                  <p className="font-medium">Mike SuperAdmin</p>
+                  <p className="font-medium">Mickey SuperAdmin</p>
                   <p className="text-xs text-gray-500">
                     super@chapa.co - Super Admin
                   </p>

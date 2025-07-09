@@ -16,7 +16,7 @@ export const mockUsers: MockUser[] = [
   },
   {
     id: "2",
-    name: "Solomon Admin",
+    name: "Bekele Admin",
     password: await hashPassword("password"),
     email: "admin@chapa.co",
     role: "admin",
@@ -26,15 +26,35 @@ export const mockUsers: MockUser[] = [
   },
   {
     id: "3",
-    name: "Mike SuperAdmin",
+    name: "Mickey SuperAdmin",
     password: await hashPassword("password"),
     email: "super@chapa.co",
     role: ROLES.SUPERADMIN,
     isActive: true,
     walletBalance: 5000.0,
     totalPayments: 25000.0,
-  }
-]
+  },
+  {
+    id: "4",
+    name: "Paulos User",
+    password: await hashPassword("password"),
+    email: "paul@chapa.co",
+    role: "user",
+    isActive: true,
+    walletBalance: 2000.0,
+    totalPayments: 12000.0,
+  },
+  {
+    id: "5",
+    name: "Misrak User",
+    password: await hashPassword("password"),
+    email: "misrak@chapa.co",
+    role: "user",
+    isActive: true,
+    walletBalance: 1000.0,
+    totalPayments: 18000.0,
+  },
+];
 
 export const mockTransactions: Transaction[] = [
   {
@@ -42,9 +62,9 @@ export const mockTransactions: Transaction[] = [
     senderId: "1",
     senderName: "John User",
     receiverId: "3",
-    receiverName: "Mike SuperAdmin",
+    receiverName: "Mickey SuperAdmin",
     amount: 250.0,
-    description: "Transfer to Mike",
+    description: "Transfer to Mickey",
     date: "2024-01-14T15:45:00Z",
     status: "completed",
   },
@@ -59,11 +79,11 @@ export const mockTransactions: Transaction[] = [
     date: "2024-01-13T09:15:00Z",
     status: "pending",
   },
-]
+];
 
 export const systemStats = {
   totalPayments: 50500.0,
   activeUsers: 156,
   totalTransactions: 1247,
   monthlyGrowth: 12.5,
-}
+};
